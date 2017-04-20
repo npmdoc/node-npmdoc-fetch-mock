@@ -1,0 +1,1988 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="http://www.wheresrhys.co.uk/fetch-mock">fetch-mock (v5.10.0)</a>
+</h1>
+<h4>Mock http requests made using fetch (or isomorphic-fetch)</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fetch-mock">module fetch-mock</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetchMock">
+            function <span class="apidocSignatureSpan">fetch-mock.</span>fetchMock
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock">
+            function <span class="apidocSignatureSpan">fetch-mock.</span>fetch_mock
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.reset">
+            function <span class="apidocSignatureSpan">fetch-mock.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.restore">
+            function <span class="apidocSignatureSpan">fetch-mock.</span>restore
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fetch-mock.</span>_calls</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fetch-mock.</span>_matchedCalls</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fetch-mock.</span>_unmatchedCalls</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fetch-mock.</span>fetch_mock.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fetch-mock.</span>routes</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fetch-mock.</span>server</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fetch-mock.fetch_mock">module fetch-mock.fetch_mock</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.fetch_mock">
+            function <span class="apidocSignatureSpan">fetch-mock.</span>fetch_mock
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.Headers">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.</span>Headers
+            <span class="apidocSignatureSpan">(headers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.Promise">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.</span>Promise
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.Request">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.</span>Request
+            <span class="apidocSignatureSpan">(input, init)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.Response">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.</span>Response
+            <span class="apidocSignatureSpan">(body, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.setImplementations">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.</span>setImplementations
+            <span class="apidocSignatureSpan">(implementations)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fetch-mock.fetch_mock.</span>config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fetch-mock.fetch_mock.</span>statusTextMap</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fetch-mock.fetch_mock.prototype">module fetch-mock.fetch_mock.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype._mock">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>_mock
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype._unMock">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>_unMock
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.addRoute">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>addRoute
+            <span class="apidocSignatureSpan">(route)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.bindMethods">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>bindMethods
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.called">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>called
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.calls">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>calls
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.catch">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>catch
+            <span class="apidocSignatureSpan">(response)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.configure">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>configure
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.delete">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>delete
+            <span class="apidocSignatureSpan">(matcher, response, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.deleteOnce">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>deleteOnce
+            <span class="apidocSignatureSpan">(matcher, response, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.done">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>done
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.fetchMock">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>fetchMock
+            <span class="apidocSignatureSpan">(url, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.get">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>get
+            <span class="apidocSignatureSpan">(matcher, response, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.getOnce">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>getOnce
+            <span class="apidocSignatureSpan">(matcher, response, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.head">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>head
+            <span class="apidocSignatureSpan">(matcher, response, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.headOnce">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>headOnce
+            <span class="apidocSignatureSpan">(matcher, response, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.lastCall">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>lastCall
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.lastOptions">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>lastOptions
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.lastUrl">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>lastUrl
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.mock">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>mock
+            <span class="apidocSignatureSpan">(matcher, response, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.mockResponse">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>mockResponse
+            <span class="apidocSignatureSpan">(url, responseConfig, fetchOpts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.once">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>once
+            <span class="apidocSignatureSpan">(matcher, response, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.patch">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>patch
+            <span class="apidocSignatureSpan">(matcher, response, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.patchOnce">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>patchOnce
+            <span class="apidocSignatureSpan">(matcher, response, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.post">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>post
+            <span class="apidocSignatureSpan">(matcher, response, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.postOnce">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>postOnce
+            <span class="apidocSignatureSpan">(matcher, response, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.push">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>push
+            <span class="apidocSignatureSpan">(name, call)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.put">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>put
+            <span class="apidocSignatureSpan">(matcher, response, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.putOnce">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>putOnce
+            <span class="apidocSignatureSpan">(matcher, response, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.reset">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.restore">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>restore
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.router">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>router
+            <span class="apidocSignatureSpan">(url, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.sandbox">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>sandbox
+            <span class="apidocSignatureSpan">(Promise)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.setImplementations">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>setImplementations
+            <span class="apidocSignatureSpan">(implementations)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.fetch_mock.prototype.spy">
+            function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>spy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fetch-mock.server">module fetch-mock.server</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.server.fetchMock">
+            function <span class="apidocSignatureSpan">fetch-mock.server.</span>fetchMock
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.server.reset">
+            function <span class="apidocSignatureSpan">fetch-mock.server.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fetch-mock.server.restore">
+            function <span class="apidocSignatureSpan">fetch-mock.server.</span>restore
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fetch-mock.server.</span>_calls</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fetch-mock.server.</span>_matchedCalls</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fetch-mock.server.</span>_unmatchedCalls</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fetch-mock.server.</span>routes</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fetch-mock" id="apidoc.module.fetch-mock">module fetch-mock</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetchMock" id="apidoc.element.fetch-mock.fetchMock">
+        function <span class="apidocSignatureSpan">fetch-mock.</span>fetchMock
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fetchMock = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock" id="apidoc.element.fetch-mock.fetch_mock">
+        function <span class="apidocSignatureSpan">fetch-mock.</span>fetch_mock
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FetchMock() {
+
+	this.routes = [];
+	this._calls = {};
+	this._matchedCalls = [];
+	this._unmatchedCalls = [];
+	this.bindMethods();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.reset" id="apidoc.element.fetch-mock.reset">
+        function <span class="apidocSignatureSpan">fetch-mock.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	} else {
+		this._unmatchedCalls.push(call);
+	}
+};
+
+FetchMock.prototype.restore = function () {
+	this._unMock();
+	this.<span class="apidocCodeKeywordSpan">reset</span>();
+	this.routes = [];
+	return this;
+};
+
+FetchMock.prototype.reset = function () {
+	this._calls = {};
+	this._matchedCalls = [];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.restore" id="apidoc.element.fetch-mock.restore">
+        function <span class="apidocSignatureSpan">fetch-mock.</span>restore
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">restore = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fetch-mock.fetch_mock" id="apidoc.module.fetch-mock.fetch_mock">module fetch-mock.fetch_mock</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.fetch_mock" id="apidoc.element.fetch-mock.fetch_mock.fetch_mock">
+        function <span class="apidocSignatureSpan">fetch-mock.</span>fetch_mock
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FetchMock() {
+
+	this.routes = [];
+	this._calls = {};
+	this._matchedCalls = [];
+	this._unmatchedCalls = [];
+	this.bindMethods();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.Headers" id="apidoc.element.fetch-mock.fetch_mock.Headers">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.</span>Headers
+        <span class="apidocSignatureSpan">(headers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Headers(headers) {
+
+	var self = this;
+	this._headers = {};
+
+	// Headers
+	if (headers instanceof Headers) {
+		headers = headers.raw();
+	}
+
+	// plain object
+	for (var prop in headers) {
+		if (!headers.hasOwnProperty(prop)) {
+			continue;
+		}
+
+		if (typeof headers[prop] === 'string') {
+			this.set(prop, headers[prop]);
+
+		} else if (typeof headers[prop] === 'number' &amp;&amp; !isNaN(headers[prop])) {
+			this.set(prop, headers[prop].toString());
+
+		} else if (headers[prop] instanceof Array) {
+			headers[prop].forEach(function(item) {
+				self.append(prop, item.toString());
+			});
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	if (responseConfig.status &amp;&amp; (typeof responseConfig.status !== 'number' || parseInt(responseConfig.status,
+10) !== responseConfig.status || responseConfig.status &lt; 200 || responseConfig.status &gt; 599)) {
+		throw new TypeError('Invalid status ' + responseConfig.status + ' passed on response object.\nTo respond with a
+ JSON object that has status as a property assign the object to body\ne.g. {"body": {"status: "registered"}}');
+	}
+	opts.status = responseConfig.status || 200;
+	opts.statusText = FetchMock.statusTextMap['' + opts.status];
+	// The ternary operator is to cope with new Headers(undefined) throwing in Chrome
+	// https://code.google.com/p/chromium/issues/detail?id=335871
+	opts.headers = responseConfig.headers ? new FetchMock.<span class="apidocCodeKeywordSpan">Headers</span>(responseConfig.headers
+) : new FetchMock.Headers();
+
+	var body = responseConfig.body;
+	if (opts.sendAsJson &amp;&amp; responseConfig.body != null &amp;&amp; (typeof body === 'undefined' ? 'undefined
+' : _typeof(body)) === 'object') {
+		//eslint-disable-line
+		body = JSON.stringify(body);
+	}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.Promise" id="apidoc.element.fetch-mock.fetch_mock.Promise">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.</span>Promise
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Promise() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.Request" id="apidoc.element.fetch-mock.fetch_mock.Request">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.</span>Request
+        <span class="apidocSignatureSpan">(input, init)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Request(input, init) {
+	var url, url_parsed;
+
+	// normalize input
+	if (!(input instanceof Request)) {
+		url = input;
+		url_parsed = parse_url(url);
+		input = {};
+	} else {
+		url = input.url;
+		url_parsed = parse_url(url);
+	}
+
+	// normalize init
+	init = init || {};
+
+	// fetch spec options
+	this.method = init.method || input.method || 'GET';
+	this.redirect = init.redirect || input.redirect || 'follow';
+	this.headers = new Headers(init.headers || input.headers || {});
+	this.url = url;
+
+	// server only options
+	this.follow = init.follow !== undefined ?
+		init.follow : input.follow !== undefined ?
+		input.follow : 20;
+	this.compress = init.compress !== undefined ?
+		init.compress : input.compress !== undefined ?
+		input.compress : true;
+	this.counter = init.counter || input.counter || 0;
+	this.agent = init.agent || input.agent;
+
+	Body.call(this, init.body || this._clone(input), {
+		timeout: init.timeout || input.timeout || 0,
+		size: init.size || input.size || 0
+	});
+
+	// server request options
+	this.protocol = url_parsed.protocol;
+	this.hostname = url_parsed.hostname;
+	this.port = url_parsed.port;
+	this.path = url_parsed.path;
+	this.auth = url_parsed.auth;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.Response" id="apidoc.element.fetch-mock.fetch_mock.Response">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.</span>Response
+        <span class="apidocSignatureSpan">(body, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Response(body, opts) {
+
+	opts = opts || {};
+
+	this.url = opts.url;
+	this.status = opts.status || 200;
+	this.statusText = opts.statusText || http.STATUS_CODES[this.status];
+	this.headers = new Headers(opts.headers);
+	this.ok = this.status &gt;= 200 &amp;&amp; this.status &lt; 300;
+
+	Body.call(this, body, opts);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			//eslint-disable-line
+			s.push(body, 'utf-8');
+		}
+		s.push(null);
+		body = s;
+	}
+
+	return Promise.resolve(new FetchMock.<span class="apidocCodeKeywordSpan">Response</span>(body, opts));
+};
+
+FetchMock.prototype.push = function (name, call) {
+	if (name) {
+		this._calls[name] = this._calls[name] || [];
+		this._calls[name].push(call);
+		this._matchedCalls.push(call);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.setImplementations" id="apidoc.element.fetch-mock.fetch_mock.setImplementations">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.</span>setImplementations
+        <span class="apidocSignatureSpan">(implementations)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setImplementations = function (implementations) {
+	FetchMock.Headers = implementations.Headers || FetchMock.Headers;
+	FetchMock.Request = implementations.Request || FetchMock.Request;
+	FetchMock.Response = implementations.Response || FetchMock.Response;
+	FetchMock.Promise = implementations.Promise || FetchMock.Promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var FetchMock = require('./fetch-mock');
+var statusTextMap = require('./status-text');
+var theGlobal = typeof window !== 'undefined' ? window : self;
+
+FetchMock.global = theGlobal;
+FetchMock.statusTextMap = statusTextMap;
+
+FetchMock.<span class="apidocCodeKeywordSpan">setImplementations</span>({
+	Promise: theGlobal.Promise,
+	Request: theGlobal.Request,
+	Response: theGlobal.Response,
+	Headers: theGlobal.Headers
+});
+
+module.exports = new FetchMock();
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fetch-mock.fetch_mock.prototype" id="apidoc.module.fetch-mock.fetch_mock.prototype">module fetch-mock.fetch_mock.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype._mock" id="apidoc.element.fetch-mock.fetch_mock.prototype._mock">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>_mock
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_mock = function () {
+	if (!this.isSandbox) {
+		// Do this here rather than in the constructor to ensure it's scoped to the test
+		this.realFetch = this.realFetch || FetchMock.global.fetch;
+		FetchMock.global.fetch = this.fetchMock;
+	}
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		route = matcher;
+	} else {
+		throw new Error('Invalid parameters passed to fetch-mock');
+	}
+
+	this.addRoute(route);
+
+	return this.<span class="apidocCodeKeywordSpan">_mock</span>();
+};
+
+FetchMock.prototype.once = function (matcher, response, options) {
+	return this.mock(matcher, response, _extends({}, options, { times: 1 }));
+};
+
+FetchMock.prototype._mock = function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype._unMock" id="apidoc.element.fetch-mock.fetch_mock.prototype._unMock">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>_unMock
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_unMock = function () {
+	if (this.realFetch) {
+		FetchMock.global.fetch = this.realFetch;
+		this.realFetch = null;
+	}
+	this.fallbackResponse = null;
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		this._matchedCalls.push(call);
+	} else {
+		this._unmatchedCalls.push(call);
+	}
+};
+
+FetchMock.prototype.restore = function () {
+	this.<span class="apidocCodeKeywordSpan">_unMock</span>();
+	this.reset();
+	this.routes = [];
+	return this;
+};
+
+FetchMock.prototype.reset = function () {
+	this._calls = {};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.addRoute" id="apidoc.element.fetch-mock.fetch_mock.prototype.addRoute">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>addRoute
+        <span class="apidocSignatureSpan">(route)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addRoute = function (route) {
+
+	if (!route) {
+		throw new Error('.mock() must be passed configuration for a route');
+	}
+
+	// Allows selective application of some of the preregistered routes
+	this.routes.push(compileRoute(route, FetchMock.Request));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		};
+	} else if (matcher &amp;&amp; matcher.matcher) {
+		route = matcher;
+	} else {
+		throw new Error('Invalid parameters passed to fetch-mock');
+	}
+
+	this.<span class="apidocCodeKeywordSpan">addRoute</span>(route);
+
+	return this._mock();
+};
+
+FetchMock.prototype.once = function (matcher, response, options) {
+	return this.mock(matcher, response, _extends({}, options, { times: 1 }));
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.bindMethods" id="apidoc.element.fetch-mock.fetch_mock.prototype.bindMethods">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>bindMethods
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bindMethods = function () {
+	this.fetchMock = FetchMock.prototype.fetchMock.bind(this);
+	this.restore = FetchMock.prototype.restore.bind(this);
+	this.reset = FetchMock.prototype.reset.bind(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var FetchMock = function FetchMock() {
+
+	this.routes = [];
+	this._calls = {};
+	this._matchedCalls = [];
+	this._unmatchedCalls = [];
+	this.<span class="apidocCodeKeywordSpan">bindMethods</span>();
+};
+
+FetchMock.prototype.bindMethods = function () {
+	this.fetchMock = FetchMock.prototype.fetchMock.bind(this);
+	this.restore = FetchMock.prototype.restore.bind(this);
+	this.reset = FetchMock.prototype.reset.bind(this);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.called" id="apidoc.element.fetch-mock.fetch_mock.prototype.called">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>called
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">called = function (name) {
+	if (!name) {
+		return !!(this._matchedCalls.length || this._unmatchedCalls.length);
+	}
+	return !!(this._calls[name] &amp;&amp; this._calls[name].length);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	var names = name ? [name] : this.routes.map(function (r) {
+		return r.name;
+	});
+	// Can't use array.every because
+	// a) not widely supported
+	// b) would exit after first failure, which would break the logging
+	return names.map(function (name) {
+		if (!_this2.<span class="apidocCodeKeywordSpan">called</span>(name)) {
+			console.warn('Warning: ' + name + ' not called');
+			return false;
+		}
+		// would use array.find... but again not so widely supported
+		var expectedTimes = (_this2.routes.filter(function (r) {
+			return r.name === name;
+		}) || [{}])[0].times;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.calls" id="apidoc.element.fetch-mock.fetch_mock.prototype.calls">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>calls
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">calls = function (name) {
+	return name ? this._calls[name] || [] : {
+		matched: this._matchedCalls,
+		unmatched: this._unmatchedCalls
+	};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	return name ? this._calls[name] || [] : {
+		matched: this._matchedCalls,
+		unmatched: this._unmatchedCalls
+	};
+};
+
+FetchMock.prototype.lastCall = function (name) {
+	var calls = name ? this.<span class="apidocCodeKeywordSpan">calls</span>(name) : this.calls().matched;
+	if (calls &amp;&amp; calls.length) {
+		return calls[calls.length - 1];
+	} else {
+		return undefined;
+	}
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.catch" id="apidoc.element.fetch-mock.fetch_mock.prototype.catch">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>catch
+        <span class="apidocSignatureSpan">(response)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">catch = function (response) {
+	if (this.fallbackResponse) {
+		console.warn('calling fetchMock.catch() twice - are you sure you want to overwrite the previous fallback response');
+	}
+	this.fallbackResponse = response || 'ok';
+	return this._mock();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	}
+	this.fallbackResponse = null;
+	return this;
+};
+
+FetchMock.prototype.catch = function (response) {
+	if (this.fallbackResponse) {
+		console.warn('calling fetchMock.<span class="apidocCodeKeywordSpan">catch</span>() twice - are you sure you want to overwrite
+ the previous fallback response');
+	}
+	this.fallbackResponse = response || 'ok';
+	return this._mock();
+};
+
+FetchMock.prototype.spy = function () {
+	this._mock();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.configure" id="apidoc.element.fetch-mock.fetch_mock.prototype.configure">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>configure
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">configure = function (opts) {
+	_extends(FetchMock.config, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.delete" id="apidoc.element.fetch-mock.fetch_mock.prototype.delete">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>delete
+        <span class="apidocSignatureSpan">(matcher, response, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (matcher, response, options) {
+		return this.mock(matcher, response, _extends({}, options, { method: method.toUpperCase() }));
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.deleteOnce" id="apidoc.element.fetch-mock.fetch_mock.prototype.deleteOnce">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>deleteOnce
+        <span class="apidocSignatureSpan">(matcher, response, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteOnce = function (matcher, response, options) {
+		return this.once(matcher, response, _extends({}, options, { method: method.toUpperCase() }));
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.done" id="apidoc.element.fetch-mock.fetch_mock.prototype.done">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>done
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">done = function (name) {
+	var _this2 = this;
+
+	var names = name ? [name] : this.routes.map(function (r) {
+		return r.name;
+	});
+	// Can't use array.every because
+	// a) not widely supported
+	// b) would exit after first failure, which would break the logging
+	return names.map(function (name) {
+		if (!_this2.called(name)) {
+			console.warn('Warning: ' + name + ' not called');
+			return false;
+		}
+		// would use array.find... but again not so widely supported
+		var expectedTimes = (_this2.routes.filter(function (r) {
+			return r.name === name;
+		}) || [{}])[0].times;
+
+		if (!expectedTimes) {
+			return true;
+		}
+
+		var actualTimes = _this2.calls(name).length;
+		if (expectedTimes &gt; actualTimes) {
+			console.warn('Warning: ' + name + ' only called ' + actualTimes + ' times, but ' + expectedTimes + ' expected');
+			return false;
+		} else {
+			return true;
+		}
+	}).filter(function (bool) {
+		return !bool;
+	}).length === 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.fetchMock" id="apidoc.element.fetch-mock.fetch_mock.prototype.fetchMock">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>fetchMock
+        <span class="apidocSignatureSpan">(url, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fetchMock = function (url, opts) {
+	var _this = this;
+
+	var Promise = this.Promise || FetchMock.Promise;
+	var response = this.router(url, opts);
+
+	if (!response) {
+		console.warn('Unmatched ' + (opts &amp;&amp; opts.method || 'GET') + ' to ' + url);
+		this.push(null, [url, opts]);
+
+		if (this.fallbackResponse) {
+			response = this.fallbackResponse;
+		} else {
+			throw new Error('No fallback response defined for ' + (opts &amp;&amp; opts.method || 'GET') + ' to ' + url);
+		}
+	}
+
+	if (typeof response === 'function') {
+		response = response(url, opts);
+	}
+
+	if (typeof response.then === 'function') {
+		var responsePromise = response.then(function (response) {
+			return _this.mockResponse(url, response, opts);
+		});
+		return Promise.resolve(responsePromise); // Ensure Promise is always our implementation.
+	} else {
+		return this.mockResponse(url, response, opts);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.get" id="apidoc.element.fetch-mock.fetch_mock.prototype.get">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>get
+        <span class="apidocSignatureSpan">(matcher, response, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (matcher, response, options) {
+		return this.mock(matcher, response, _extends({}, options, { method: method.toUpperCase() }));
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.getOnce" id="apidoc.element.fetch-mock.fetch_mock.prototype.getOnce">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>getOnce
+        <span class="apidocSignatureSpan">(matcher, response, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getOnce = function (matcher, response, options) {
+		return this.once(matcher, response, _extends({}, options, { method: method.toUpperCase() }));
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.head" id="apidoc.element.fetch-mock.fetch_mock.prototype.head">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>head
+        <span class="apidocSignatureSpan">(matcher, response, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">head = function (matcher, response, options) {
+		return this.mock(matcher, response, _extends({}, options, { method: method.toUpperCase() }));
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.headOnce" id="apidoc.element.fetch-mock.fetch_mock.prototype.headOnce">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>headOnce
+        <span class="apidocSignatureSpan">(matcher, response, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">headOnce = function (matcher, response, options) {
+		return this.once(matcher, response, _extends({}, options, { method: method.toUpperCase() }));
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.lastCall" id="apidoc.element.fetch-mock.fetch_mock.prototype.lastCall">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>lastCall
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lastCall = function (name) {
+	var calls = name ? this.calls(name) : this.calls().matched;
+	if (calls &amp;&amp; calls.length) {
+		return calls[calls.length - 1];
+	} else {
+		return undefined;
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		return calls[calls.length - 1];
+	} else {
+		return undefined;
+	}
+};
+
+FetchMock.prototype.lastUrl = function (name) {
+	var call = this.<span class="apidocCodeKeywordSpan">lastCall</span>(name);
+	return call &amp;&amp; call[0];
+};
+
+FetchMock.prototype.lastOptions = function (name) {
+	var call = this.lastCall(name);
+	return call &amp;&amp; call[1];
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.lastOptions" id="apidoc.element.fetch-mock.fetch_mock.prototype.lastOptions">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>lastOptions
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lastOptions = function (name) {
+	var call = this.lastCall(name);
+	return call &amp;&amp; call[1];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.lastUrl" id="apidoc.element.fetch-mock.fetch_mock.prototype.lastUrl">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>lastUrl
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lastUrl = function (name) {
+	var call = this.lastCall(name);
+	return call &amp;&amp; call[0];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.mock" id="apidoc.element.fetch-mock.fetch_mock.prototype.mock">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>mock
+        <span class="apidocSignatureSpan">(matcher, response, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mock = function (matcher, response, options) {
+
+	var route = void 0;
+
+	// Handle the variety of parameters accepted by mock (see README)
+	if (matcher &amp;&amp; response &amp;&amp; options) {
+		route = _extends({
+			matcher: matcher,
+			response: response
+		}, options);
+	} else if (matcher &amp;&amp; response) {
+		route = {
+			matcher: matcher,
+			response: response
+		};
+	} else if (matcher &amp;&amp; matcher.matcher) {
+		route = matcher;
+	} else {
+		throw new Error('Invalid parameters passed to fetch-mock');
+	}
+
+	this.addRoute(route);
+
+	return this._mock();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	this.addRoute(route);
+
+	return this._mock();
+};
+
+FetchMock.prototype.once = function (matcher, response, options) {
+	return this.<span class="apidocCodeKeywordSpan">mock</span>(matcher, response, _extends({}, options, { times: 1 }));
+};
+
+FetchMock.prototype._mock = function () {
+	if (!this.isSandbox) {
+		// Do this here rather than in the constructor to ensure it's scoped to the test
+		this.realFetch = this.realFetch || FetchMock.global.fetch;
+		FetchMock.global.fetch = this.fetchMock;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.mockResponse" id="apidoc.element.fetch-mock.fetch_mock.prototype.mockResponse">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>mockResponse
+        <span class="apidocSignatureSpan">(url, responseConfig, fetchOpts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mockResponse = function (url, responseConfig, fetchOpts) {
+	var Promise = this.Promise || FetchMock.Promise;
+
+	// It seems odd to call this in here even though it's already called within fetchMock
+	// It's to handle the fact that because we want to support making it very easy to add a
+	// delay to any sort of response (including responses which are defined with a function)
+	// while also allowing function responses to return a Promise for a response config.
+	if (typeof responseConfig === 'function') {
+		responseConfig = responseConfig(url, fetchOpts);
+	}
+
+	if (FetchMock.Response.prototype.isPrototypeOf(responseConfig)) {
+		return Promise.resolve(responseConfig);
+	}
+
+	if (responseConfig.throws) {
+		return Promise.reject(responseConfig.throws);
+	}
+
+	if (typeof responseConfig === 'number') {
+		responseConfig = {
+			status: responseConfig
+		};
+	} else if (typeof responseConfig === 'string' || !(responseConfig.body || responseConfig.headers || responseConfig.throws || responseConfig
+.status)) {
+		responseConfig = {
+			body: responseConfig
+		};
+	}
+
+	var opts = responseConfig.opts || {};
+	opts.url = url;
+	opts.sendAsJson = responseConfig.sendAsJson === undefined ? FetchMock.config.sendAsJson : responseConfig.sendAsJson;
+	if (responseConfig.status &amp;&amp; (typeof responseConfig.status !== 'number' || parseInt(responseConfig.status, 10) !== responseConfig
+.status || responseConfig.status &lt; 200 || responseConfig.status &gt; 599)) {
+		throw new TypeError('Invalid status ' + responseConfig.status + ' passed on response object.\nTo respond with a JSON object that
+ has status as a property assign the object to body\ne.g. {"body": {"status: "registered"}}');
+	}
+	opts.status = responseConfig.status || 200;
+	opts.statusText = FetchMock.statusTextMap['' + opts.status];
+	// The ternary operator is to cope with new Headers(undefined) throwing in Chrome
+	// https://code.google.com/p/chromium/issues/detail?id=335871
+	opts.headers = responseConfig.headers ? new FetchMock.Headers(responseConfig.headers) : new FetchMock.Headers();
+
+	var body = responseConfig.body;
+	if (opts.sendAsJson &amp;&amp; responseConfig.body != null &amp;&amp; (typeof body === 'undefined' ? 'undefined' : _typeof(body)) === 'object') {
+		//eslint-disable-line
+		body = JSON.stringify(body);
+	}
+
+	if (FetchMock.stream) {
+		var s = new FetchMock.stream.Readable();
+		if (body != null) {
+			//eslint-disable-line
+			s.push(body, 'utf-8');
+		}
+		s.push(null);
+		body = s;
+	}
+
+	return Promise.resolve(new FetchMock.Response(body, opts));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	if (typeof response === 'function') {
+		response = response(url, opts);
+	}
+
+	if (typeof response.then === 'function') {
+		var responsePromise = response.then(function (response) {
+			return _this.<span class="apidocCodeKeywordSpan">mockResponse</span>(url, response, opts);
+		});
+		return Promise.resolve(responsePromise); // Ensure Promise is always our implementation.
+	} else {
+		return this.mockResponse(url, response, opts);
+	}
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.once" id="apidoc.element.fetch-mock.fetch_mock.prototype.once">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>once
+        <span class="apidocSignatureSpan">(matcher, response, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">once = function (matcher, response, options) {
+	return this.mock(matcher, response, _extends({}, options, { times: 1 }));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+['get', 'post', 'put', 'delete', 'head', 'patch'].forEach(function (
+method) {
+	FetchMock.prototype[method] = function (matcher, response, options) {
+		return this.mock(matcher, response, _extends({}, options, { method: method.toUpperCase() }));
+	};
+	FetchMock.prototype[method + 'Once'] = function (matcher, response, options) {
+		return this.<span class="apidocCodeKeywordSpan">once</span>(matcher, response, _extends({}, options, { method: method.toUpperCase
+() }));
+	};
+});
+
+module.exports = FetchMock;
+},{"./compile-route":2}],4:[function(require,module,exports){
+'use strict';
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.patch" id="apidoc.element.fetch-mock.fetch_mock.prototype.patch">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>patch
+        <span class="apidocSignatureSpan">(matcher, response, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">patch = function (matcher, response, options) {
+		return this.mock(matcher, response, _extends({}, options, { method: method.toUpperCase() }));
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.patchOnce" id="apidoc.element.fetch-mock.fetch_mock.prototype.patchOnce">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>patchOnce
+        <span class="apidocSignatureSpan">(matcher, response, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">patchOnce = function (matcher, response, options) {
+		return this.once(matcher, response, _extends({}, options, { method: method.toUpperCase() }));
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.post" id="apidoc.element.fetch-mock.fetch_mock.prototype.post">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>post
+        <span class="apidocSignatureSpan">(matcher, response, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">post = function (matcher, response, options) {
+		return this.mock(matcher, response, _extends({}, options, { method: method.toUpperCase() }));
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.postOnce" id="apidoc.element.fetch-mock.fetch_mock.prototype.postOnce">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>postOnce
+        <span class="apidocSignatureSpan">(matcher, response, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">postOnce = function (matcher, response, options) {
+		return this.once(matcher, response, _extends({}, options, { method: method.toUpperCase() }));
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.push" id="apidoc.element.fetch-mock.fetch_mock.prototype.push">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>push
+        <span class="apidocSignatureSpan">(name, call)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">push = function (name, call) {
+	if (name) {
+		this._calls[name] = this._calls[name] || [];
+		this._calls[name].push(call);
+		this._matchedCalls.push(call);
+	} else {
+		this._unmatchedCalls.push(call);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	var _this = this;
+
+	var Promise = this.Promise || FetchMock.Promise;
+	var response = this.router(url, opts);
+
+	if (!response) {
+		console.warn('Unmatched ' + (opts &amp;&amp; opts.method || 'GET') + ' to ' + url);
+		this.<span class="apidocCodeKeywordSpan">push</span>(null, [url, opts]);
+
+		if (this.fallbackResponse) {
+			response = this.fallbackResponse;
+		} else {
+			throw new Error('No fallback response defined for ' + (opts &amp;&amp; opts.method || 'GET') + ' to
+ ' + url);
+		}
+	}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.put" id="apidoc.element.fetch-mock.fetch_mock.prototype.put">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>put
+        <span class="apidocSignatureSpan">(matcher, response, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">put = function (matcher, response, options) {
+		return this.mock(matcher, response, _extends({}, options, { method: method.toUpperCase() }));
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.putOnce" id="apidoc.element.fetch-mock.fetch_mock.prototype.putOnce">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>putOnce
+        <span class="apidocSignatureSpan">(matcher, response, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">putOnce = function (matcher, response, options) {
+		return this.once(matcher, response, _extends({}, options, { method: method.toUpperCase() }));
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.reset" id="apidoc.element.fetch-mock.fetch_mock.prototype.reset">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function () {
+	this._calls = {};
+	this._matchedCalls = [];
+	this._unmatchedCalls = [];
+	this.routes.forEach(function (route) {
+		return route.reset &amp;&amp; route.reset();
+	});
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	} else {
+		this._unmatchedCalls.push(call);
+	}
+};
+
+FetchMock.prototype.restore = function () {
+	this._unMock();
+	this.<span class="apidocCodeKeywordSpan">reset</span>();
+	this.routes = [];
+	return this;
+};
+
+FetchMock.prototype.reset = function () {
+	this._calls = {};
+	this._matchedCalls = [];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.restore" id="apidoc.element.fetch-mock.fetch_mock.prototype.restore">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>restore
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">restore = function () {
+	this._unMock();
+	this.reset();
+	this.routes = [];
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.router" id="apidoc.element.fetch-mock.fetch_mock.prototype.router">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>router
+        <span class="apidocSignatureSpan">(url, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">router = function (url, opts) {
+	var route = void 0;
+	for (var i = 0, il = this.routes.length; i &lt; il; i++) {
+		route = this.routes[i];
+		if (route.matcher(url, opts)) {
+			this.push(route.name, [url, opts]);
+			return route.response;
+		}
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	return this.catch(this.realFetch);
+};
+
+FetchMock.prototype.fetchMock = function (url, opts) {
+	var _this = this;
+
+	var Promise = this.Promise || FetchMock.Promise;
+	var response = this.<span class="apidocCodeKeywordSpan">router</span>(url, opts);
+
+	if (!response) {
+		console.warn('Unmatched ' + (opts &amp;&amp; opts.method || 'GET') + ' to ' + url);
+		this.push(null, [url, opts]);
+
+		if (this.fallbackResponse) {
+			response = this.fallbackResponse;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.sandbox" id="apidoc.element.fetch-mock.fetch_mock.prototype.sandbox">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>sandbox
+        <span class="apidocSignatureSpan">(Promise)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sandbox = function (Promise) {
+	if (this.routes.length || this.fallbackResponse) {
+		throw new Error('.sandbox() can only be called on fetch-mock instances that don\'t have routes configured already');
+	}
+	var instance = new FetchMock();
+
+	// this construct allows us to create a fetch-mock instance which is also
+	// a callable function, while circumventing circularity when defining the
+	// object that this function should be bound to
+	var boundMock = void 0;
+	var proxy = function proxy() {
+		return boundMock.apply(null, arguments);
+	};
+
+	var functionInstance = _extends(proxy, // Ensures that the entire returned object is a callable function
+	FetchMock.prototype, // all prototype methods
+	instance // instance data
+	);
+	functionInstance.bindMethods();
+	boundMock = functionInstance.fetchMock;
+	functionInstance.isSandbox = true;
+	if (Promise) {
+		functionInstance.Promise = Promise;
+	}
+
+	return functionInstance;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	FetchMock.Request = implementations.Request || FetchMock.Request;
+	FetchMock.Response = implementations.Response || FetchMock.Response;
+	FetchMock.Promise = implementations.Promise || FetchMock.Promise;
+};
+
+FetchMock.prototype.sandbox = function (Promise) {
+	if (this.routes.length || this.fallbackResponse) {
+		throw new Error('.<span class="apidocCodeKeywordSpan">sandbox</span>() can only be called on fetch-mock instances that don\'t have routes configured already');
+	}
+	var instance = new FetchMock();
+
+	// this construct allows us to create a fetch-mock instance which is also
+	// a callable function, while circumventing circularity when defining the
+	// object that this function should be bound to
+	var boundMock = void 0;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.setImplementations" id="apidoc.element.fetch-mock.fetch_mock.prototype.setImplementations">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>setImplementations
+        <span class="apidocSignatureSpan">(implementations)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setImplementations = function (implementations) {
+	FetchMock.Headers = implementations.Headers || FetchMock.Headers;
+	FetchMock.Request = implementations.Request || FetchMock.Request;
+	FetchMock.Response = implementations.Response || FetchMock.Response;
+	FetchMock.Promise = implementations.Promise || FetchMock.Promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var FetchMock = require('./fetch-mock');
+var statusTextMap = require('./status-text');
+var theGlobal = typeof window !== 'undefined' ? window : self;
+
+FetchMock.global = theGlobal;
+FetchMock.statusTextMap = statusTextMap;
+
+FetchMock.<span class="apidocCodeKeywordSpan">setImplementations</span>({
+	Promise: theGlobal.Promise,
+	Request: theGlobal.Request,
+	Response: theGlobal.Response,
+	Headers: theGlobal.Headers
+});
+
+module.exports = new FetchMock();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.fetch_mock.prototype.spy" id="apidoc.element.fetch-mock.fetch_mock.prototype.spy">
+        function <span class="apidocSignatureSpan">fetch-mock.fetch_mock.prototype.</span>spy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">spy = function () {
+	this._mock();
+	return this.catch(this.realFetch);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fetch-mock.server" id="apidoc.module.fetch-mock.server">module fetch-mock.server</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.server.fetchMock" id="apidoc.element.fetch-mock.server.fetchMock">
+        function <span class="apidocSignatureSpan">fetch-mock.server.</span>fetchMock
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fetchMock = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.server.reset" id="apidoc.element.fetch-mock.server.reset">
+        function <span class="apidocSignatureSpan">fetch-mock.server.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	} else {
+		this._unmatchedCalls.push(call);
+	}
+};
+
+FetchMock.prototype.restore = function () {
+	this._unMock();
+	this.<span class="apidocCodeKeywordSpan">reset</span>();
+	this.routes = [];
+	return this;
+};
+
+FetchMock.prototype.reset = function () {
+	this._calls = {};
+	this._matchedCalls = [];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fetch-mock.server.restore" id="apidoc.element.fetch-mock.server.restore">
+        function <span class="apidocSignatureSpan">fetch-mock.server.</span>restore
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">restore = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
