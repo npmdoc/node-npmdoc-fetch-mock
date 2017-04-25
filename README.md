@@ -1,6 +1,6 @@
 # npmdoc-fetch-mock
 
-#### api documentation for  [fetch-mock (v5.10.0)](http://www.wheresrhys.co.uk/fetch-mock)  [![npm package](https://img.shields.io/npm/v/npmdoc-fetch-mock.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-fetch-mock) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-fetch-mock.svg)](https://travis-ci.org/npmdoc/node-npmdoc-fetch-mock)
+#### basic api documentation for  [fetch-mock (v5.10.0)](http://www.wheresrhys.co.uk/fetch-mock)  [![npm package](https://img.shields.io/npm/v/npmdoc-fetch-mock.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-fetch-mock) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-fetch-mock.svg)](https://travis-ci.org/npmdoc/node-npmdoc-fetch-mock)
 
 #### Mock http requests made using fetch (or isomorphic-fetch)
 
@@ -21,40 +21,19 @@
 ```json
 
 {
-    "name": "fetch-mock",
-    "version": "5.10.0",
-    "description": "Mock http requests made using fetch (or isomorphic-fetch)",
-    "main": "src/server.js",
+    "author": {
+        "name": "Rhys Evans"
+    },
     "browser": "es5/client.js",
-    "scripts": {
-        "test": "make test",
-        "browserify": "browserify -s fetchMock es5/client.js > es5/client-browserified.js",
-        "prepublish": "babel src --out-dir es5 --plugins transform-object-assign --presets es2015 && npm run browserify"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/wheresrhys/fetch-mock.git"
-    },
-    "keywords": [
-        "fetch",
-        "http",
-        "mock",
-        "testing",
-        "spy",
-        "ajax",
-        "xhr"
-    ],
-    "author": "Rhys Evans",
-    "license": "MIT",
     "bugs": {
         "url": "https://github.com/wheresrhys/fetch-mock/issues"
     },
-    "homepage": "http://www.wheresrhys.co.uk/fetch-mock",
     "dependencies": {
         "glob-to-regexp": "^0.3.0",
         "node-fetch": "^1.3.3",
         "path-to-regexp": "^1.7.0"
     },
+    "description": "Mock http requests made using fetch (or isomorphic-fetch)",
     "devDependencies": {
         "babel": "^6.0.15",
         "babel-cli": "^6.1.2",
@@ -77,7 +56,49 @@
         "sinon": "^1.17.0",
         "watchify": "^3.7.0",
         "whatwg-fetch": "^0.10.1"
-    }
+    },
+    "directories": {},
+    "dist": {
+        "shasum": "52e29c72800640e48410602fe076ac3615e590ad",
+        "tarball": "https://registry.npmjs.org/fetch-mock/-/fetch-mock-5.10.0.tgz"
+    },
+    "gitHead": "11a9bf7d8b05cc3d670a82c06d7d2f36387f88c3",
+    "homepage": "http://www.wheresrhys.co.uk/fetch-mock",
+    "keywords": [
+        "fetch",
+        "http",
+        "mock",
+        "testing",
+        "spy",
+        "ajax",
+        "xhr"
+    ],
+    "license": "MIT",
+    "main": "src/server.js",
+    "maintainers": [
+        {
+            "name": "jackfranklin"
+        },
+        {
+            "name": "pimterry"
+        },
+        {
+            "name": "wheresrhys"
+        }
+    ],
+    "name": "fetch-mock",
+    "optionalDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wheresrhys/fetch-mock.git"
+    },
+    "scripts": {
+        "browserify": "browserify -s fetchMock es5/client.js > es5/client-browserified.js",
+        "prepublish": "babel src --out-dir es5 --plugins transform-object-assign --presets es2015 && npm run browserify",
+        "test": "make test"
+    },
+    "version": "5.10.0",
+    "bin": {}
 }
 ```
 
